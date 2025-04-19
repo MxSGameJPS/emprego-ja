@@ -31,7 +31,7 @@
 
 ## 📸 Screenshots
 
-![Screenshot da aplicação](https://via.placeholder.com/800x400?text=Emprego+Já+Screenshot)
+![Screenshot da aplicação](/public/tela.png)
 
 ## 🛠️ Instalação e Uso Local
 
