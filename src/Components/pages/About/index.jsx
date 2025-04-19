@@ -1,4 +1,4 @@
-import { FaGithub, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import styles from "./sobre.module.css";
 
 export default function About() {
@@ -41,6 +41,13 @@ export default function About() {
             GitHub:{" "}
             <a href="https://github.com/mxsgamejps" target="_blank" rel="noopener noreferrer">
               <FaGithub size={20} style={{ color: "#fff" }} /> @mxsgamejps
+            </a>
+          </li>
+
+          <li>
+            LinkedIn:{" "}
+            <a href="https://www.linkedin.com/in/saulo-pavanello/" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin size={20} style={{ color: "#fff" }} /> @saulo-pavanello
             </a>
           </li>
         </ul>
