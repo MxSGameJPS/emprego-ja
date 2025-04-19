@@ -1,0 +1,72 @@
+/* Estilos para a página de resultados da busca */
+.searchResults {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.resultsTitle {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.resultsList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  /* Usando grid para layout responsivo similar à Category */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.resultsItem {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Alinha título e empresa */
+  min-height: 120px; /* Garante altura mínima */
+}
+
+.resultsItem:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.resultsLink {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #0056b3;
+  text-decoration: none;
+  margin-bottom: 8px; /* Espaço entre link e nome da empresa */
+  display: inline-block; /* Para que a margem funcione */
+}
+
+.resultsLink:hover {
+  text-decoration: underline;
+}
+
+.companyName {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: auto; /* Empurra para baixo se houver espaço */
+}
+
+/* Estilos para mensagens de status (loading, erro) */
+.statusMessage {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  padding: 40px 20px;
+}
+
+.errorText {
+  color: #d9534f; /* Vermelho para erro */
+  font-weight: bold;
+}

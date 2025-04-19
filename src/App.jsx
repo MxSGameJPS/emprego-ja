@@ -4,7 +4,9 @@ import Home from "./Components/pages/Home";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
 import Category from "./Components/category";
+import SearchResults from "./Components/SearchResults";
 import About from "./Components/pages/About";
+
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +20,7 @@ function App() {
               path="/categoria/adzuna/:countryCode/:categoryTag"
               element={<Category />}
             />
+            <Route path="/search-results" element={<SearchResults />} />
             <Route path="/about" element={<About />} />
           </Routes>
         </main>

@@ -1,16 +1,27 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./heroSection.module.css";
 import { FaSearch } from "react-icons/fa";
 
 function HeroSection() {
   const [searchTerm, setSearchTerm] = useState("");
   const [location, setLocation] = useState("");
+  const navigate = useNavigate();
 
   const handleSearch = (event) => {
     event.preventDefault(); // Impede o envio padrão do formulário
-    // Aqui adicionaremos a lógica para buscar vagas com os termos
-    console.log("Buscando por:", searchTerm, "em", location);
-    // Ex: navegar para uma página de resultados ou chamar uma função de busca
+    
+    // Montar os query parameters, garantindo que estão URL-encoded
+    const queryParams = new URLSearchParams();
+    if (searchTerm) {
+      queryParams.set("what", searchTerm);
+    }
+    if (location) {
+      queryParams.set("where", location);
+    }
+
+    // Navegar para a página de resultados com os parâmetros
+    navigate(`/search-results?${queryParams.toString()}`);
   };
 
   return (
