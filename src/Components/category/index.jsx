@@ -93,20 +93,17 @@ export default function Category() {
   }, [countryCode, categoryTag]);
 
   // Filtrar vagas baseado no estado 'filtro'
-  const vagasFiltradas = jobs.filter(
-    (job) => job.title.toLowerCase().includes(filtro.toLowerCase())
-    // Opcional: buscar na descrição (pode deixar mais lento ou trazer resultados inesperados)
-    // || (job.description && job.description.toLowerCase().includes(filtro.toLowerCase()))
+  const vagasFiltradas = jobs.filter((job) =>
+    job.title.toLowerCase().includes(filtro.toLowerCase())
   );
 
   return (
     <div className={style.category}>
       <div className={style.categoryHeader}>
-        {/* Mostra nome e país */}
         <h2>
           Vagas em: {categoryName} ({displayCountry})
         </h2>
-        {/* Input de Filtro - só aparece se não estiver carregando e não houver erro inicial */}
+        {/* Input de Filtro - só aparece se a busca inicial foi feita (não loading) e sem erros */}
         {!loading && !error && (
           <input
             type="text"
@@ -118,43 +115,47 @@ export default function Category() {
         )}
       </div>
 
+      {/* --- Tratamento de Estados --- */}
       {loading && (
-        <p>
+        <p style={{ textAlign: "center", width: "100%" }}>
           Carregando vagas para {categoryName} ({displayCountry})...
         </p>
       )}
-      {error && <p className={style.errorText}>{error}</p>}
 
-      {!loading && !error && jobs.length > 0 && (
+      {error && (
+        <p className={`${style.errorText} ${style.statusMessage}`}>{error}</p>
+      )}
+
+      {/* --- Exibição dos Resultados (Apenas se não estiver loading e sem erro) --- */}
+      {!loading && !error && (
         <>
           {jobs.length === 0 ? (
+            // Caso 1: Busca concluída, sem erro, mas API não retornou NENHUMA vaga para a categoria.
             <p className={style.statusMessage}>
               Nenhuma vaga encontrada para "{categoryName}" em {displayCountry}{" "}
               no momento.
             </p>
           ) : vagasFiltradas.length === 0 ? (
+            // Caso 2: API retornou vagas, mas NENHUMA corresponde ao filtro atual.
             <p className={style.statusMessage}>
               Nenhuma vaga encontrada com o filtro "{filtro}".
             </p>
           ) : (
+            // Caso 3: API retornou vagas, E há vagas que correspondem ao filtro.
             <ul className={style.categoryList}>
               {vagasFiltradas.map((job) => (
-                // Usar job.id da Adzuna como chave
                 <li className={style.categoryItem} key={job.id}>
                   <div>
                     <a
                       className={style.categoryLink}
-                      // Usar redirect_url da Adzuna para o link externo
                       href={job.redirect_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      title={job.description} // Adiciona descrição no title para acessibilidade/hover
+                      title={job.description}
                     >
-                      {/* Usar job.title da Adzuna */}
                       {job.title}
                     </a>
                   </div>
-                  {/* Usar job.company.display_name e job.location.display_name */}
                   <span className={style.companyName}>
                     {job.company?.display_name} - {job.location?.display_name}
                   </span>
