@@ -1,0 +1,76 @@
+.exploreSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px; /* Espaçamento interno da seção */
+  max-width: 1200px; /* Largura máxima */
+  margin: 0 auto; /* Centralizar a seção */
+}
+
+.title {
+  font-size: 2.5rem; /* Tamanho grande para o título */
+  color: #fff; /* Cor padrão */
+  margin-bottom: 30px; /* Espaço abaixo do título */
+  text-align: left; /* Alinhar à esquerda (ou center, se preferir) */
+}
+
+.titleHighlight {
+  color: #a45deb; /* Cor roxa para "category" */
+}
+
+.gridContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.categoryCard {
+  background-color: #1a1a1a; /* Cor de fundo escura para o card */
+  border: 1px solid #333; /* Borda sutil */
+  border-radius: 8px; /* Cantos arredondados */
+  padding: 20px; /* Espaçamento interno do card */
+  color: #fff; /* Cor do texto */
+  text-align: left; /* Alinhar texto à esquerda */
+  cursor: pointer; /* Indicar que é clicável */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transição suave */
+}
+
+.categoryCard:hover {
+  transform: translateY(-5px); /* Efeito de levantar ao passar o mouse */
+  box-shadow: 0 5px 15px rgba(164, 93, 235, 0.3); /* Sombra roxa */
+}
+
+.categoryCard h3 {
+  margin-top: 0;
+  margin-bottom: 10px; /* Espaço abaixo do nome da categoria */
+  font-size: 1.2rem;
+}
+
+/* Estilo para indicar o país no card de categoria */
+.countryIndicator {
+  font-size: 0.8rem;
+  color: #ccc; /* Cinza mais claro */
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 10px; /* Espaço acima do indicador */
+  align-self: flex-start; /* Alinha à esquerda dentro do card */
+}
+
+.error {
+  color: #ff4d4d; /* Cor vermelha para erros */
+}
+
+/* Estilo para o Link envolvendo o card */
+.categoryLink {
+  text-decoration: none; /* Remove sublinhado */
+  color: inherit; /* Herda a cor do texto do pai (no caso, o branco do card) */
+}
+
+@media (max-width: 768px) {
+  .gridContainer {
+    flex-direction: column;
+  }
+}
+
+

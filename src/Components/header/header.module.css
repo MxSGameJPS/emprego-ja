@@ -1,0 +1,121 @@
+.header {
+  background: linear-gradient(to right, #31054b, #000000);
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logoLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logoLink h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+
+
+.nav {
+  padding: 0;
+}
+
+.desktopNav {
+  display: flex;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  align-self: center;
+  gap: 8px;
+  padding: 5px 0;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: #c792ea;
+}
+
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.mobileNavMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(10, 10, 10, 0.95);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  z-index: 1000;
+  border-bottom: 1px solid #333;
+}
+
+.mobileNavLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobileNavLink {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.2s ease;
+}
+
+.mobileNavLink:hover {
+  color: #c792ea;
+}
+
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: block;
+  }
+
+  .mobileNavMenu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logoLink h1 {
+    font-size: 1.5rem;
+  }
+}

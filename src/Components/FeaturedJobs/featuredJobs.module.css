@@ -1,0 +1,64 @@
+.featuredSection {
+  padding: 40px 20px;
+  margin: 40px auto ;
+  background: linear-gradient(45deg, #4b0152, #000724);
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 30px;
+  text-align: center; /* Centralizar título da seção */
+}
+
+.jobsGrid {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.jobCard {
+  background: linear-gradient(45deg, #1f1f1f, #0a0a0a); /* Gradiente sutil */
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.jobCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(164, 93, 235, 0.2);
+}
+
+.jobLink {
+  text-decoration: none;
+  color: #eee; /* Cor clara */
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  display: block;
+}
+
+.jobLink:hover {
+  color: #c792ea;
+}
+
+.companyLocation {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .jobsGrid {
+    flex-direction: column;
+  }
+}
+

@@ -1,0 +1,205 @@
+.heroContainer {
+  position: relative;
+  /* height: 100vh; Remover altura fixa para evitar problemas com footer */
+  min-height: 65vh; /* Altura mínima, ajuste conforme necessário */
+  background-image: url("/fundohome.jpg");
+  background-size: cover;
+  background-position: center center; /* Manter centralizado */
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Organizar conteúdo verticalmente */
+  align-items: center; /* Centralizar horizontalmente */
+  justify-content: center; /* Centralizar verticalmente */
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 40px 20px; /* Adicionar padding */
+  box-sizing: border-box; /* Incluir padding na altura */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Ajustar opacidade se necessário */
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centralizar itens */
+  /* Remover posicionamento absoluto e alinhamento à direita */
+  /* top: 60%; right: 0; */
+  width: 100%;
+  max-width: 900px; /* Aumentar largura máxima para o formulário */
+  padding: 0; /* Remover padding extra se container já tem */
+}
+
+.title {
+  font-size: 4rem; /* Aumentar um pouco */
+  font-weight: bold;
+  margin-bottom: 5px; /* Menos espaço */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.subtitle {
+  font-size: 1.1rem; /* Diminuir um pouco */
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Novo container para o formulário e seu label */
+.searchArea {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Fundo translúcido para a área */
+  padding: 15px 20px 25px 20px; /* Ajustar padding */
+  border-radius: 8px;
+}
+
+.searchAreaLabel {
+  display: block;
+  text-align: left;
+  font-size: 0.8rem;
+  color: #ccc; /* Cor clara para o label */
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.searchForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Reduzir gap */
+  /* Remover fundo branco, já está na searchArea */
+  /* background-color: rgba(255, 255, 255, 0.9); */
+  padding: 0; /* Remover padding interno */
+  border-radius: 0;
+  box-shadow: none;
+  align-items: stretch; /* Alinhar itens para mesma altura */
+}
+
+.inputGroup {
+  flex: 1; /* Ocupa espaço */
+  min-width: 220px; /* Ajustar largura mínima */
+  text-align: left;
+  position: relative; /* Para ícones */
+}
+
+.inputGroup label {
+  display: none; /* Esconder label "O quê?" e "Onde?" visualmente */
+  /* Poderia usar aria-label no input para acessibilidade */
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 14px 15px 14px 40px; /* Aumentar padding esquerdo para ícone */
+  font-size: 1rem;
+  border: none; /* Remover borda padrão */
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #333;
+}
+
+
+
+.searchButton {
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  display: flex; /* Para alinhar ícone e texto */
+  align-items: center;
+  gap: 8px; /* Espaço entre ícone e texto */
+}
+
+.searchButton:hover {
+  background-color: #218838;
+}
+
+/* Estilo para o botão dropdown (placeholder) */
+.filterButton {
+  padding: 14px 15px;
+  background-color: #343a40; /* Fundo escuro */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
+
+/* Telas médias (tablets) */
+@media (max-width: 768px) {
+  .heroContainer {
+    min-height: 50vh; /* Reduzir altura mínima */
+    padding: 30px 15px;
+  }
+
+  .title {
+    font-size: 3rem; /* Reduzir título */
+  }
+
+  .subtitle {
+    font-size: 1rem; /* Reduzir subtítulo */
+    margin-bottom: 25px;
+  }
+
+  .searchArea {
+    padding: 15px;
+  }
+
+  .searchForm {
+    flex-direction: column; /* Empilhar itens do form */
+    align-items: stretch; /* Fazer itens ocuparem largura total */
+    gap: 12px;
+  }
+
+  .inputGroup {
+    min-width: 100%; /* Ocupar largura total */
+  }
+
+  .searchButton,
+  .filterButton {
+    width: 100%; /* Botões ocupam largura total */
+    justify-content: center; /* Centralizar texto/ícone no botão */
+    padding: 14px;
+  }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 480px) {
+  .heroContainer {
+    min-height: 45vh;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .inputGroup input {
+    padding: 12px 15px 12px 35px; /* Ajustar padding se ícone for menor */
+  }
+
+  .searchButton,
+  .filterButton {
+    font-size: 0.9rem;
+  }
+}
